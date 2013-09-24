@@ -51,15 +51,31 @@ myModule.controller('MainCtrl', function($scope) {
 		{name:'Spike'}
 	];
 
+	// Create a new story
+	$scope.createStory = function() {
+		$scope.stories.push({title: 'New Story', description: 'Description pending.'});
+	};
+
+	// Build indexes based on a property for quick lookup
+	var buildIndex = function(source, property){
+		var tempArray = [];
+
+		for(var i=0, len=source.length; i<len; i++){
+			tempArray[source[i][property]]=source[i];
+		}
+
+		return tempArray;
+	};
+
+	$scope.typesIndex = buildIndex($scope.types, 'name');
+	$scope.statusesIndex = buildIndex($scope.statuses, 'name');	
+
 	// Setting current Story
 	$scope.currentStory;
 
 	$scope.setCurrentStory = function(story) {
 		$scope.currentStory = story;
-	};
-
-	// Create a new story
-	$scope.createStory = function() {
-		$scope.stories.push({title: 'New Story', description: 'Description pending.'});
+		$scope.currentStatus = $scope.statusesIndex[story.status];
+		$scope.currentType = $scope.typesIndex[story.type];
 	};
 });
