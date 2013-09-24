@@ -9,6 +9,7 @@
 	<div ng-controller="MainCtrl">
 	  <div class="menu">
 		<h2>Stories</h2>
+		<button ng-click="createStory()">New Story</button>
 		<div class="story"
 			 ng-repeat="story in stories"
 			 ng-click="setCurrentStory(story)">
@@ -68,10 +69,6 @@
 			</div>
 		  </div> <!-- control-group -->
 		</form>
-		<br />
-		<a class="btn" ng-click="createStory()">
-		  New Story
-		</a>
 	  </div>
 	</div> <!-- controller -->
   </body>
