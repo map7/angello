@@ -1,0 +1,7 @@
+.story {
+	background: lightgrey;
+	border: solid 1px grey;
+	width: 200px;
+}
+.story > h4, .story > p {margin: 10;}
+
