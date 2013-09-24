@@ -1,6 +1,6 @@
 var myModule = angular.module('Angello', [])
 
-myModule.controller('MainCtrl', function($scope) {
+myModule.controller('MainCtrl', function($scope, angelloHelper) {
 	// Add content
 	$scope.stories = [
 		{
@@ -56,19 +56,9 @@ myModule.controller('MainCtrl', function($scope) {
 		$scope.stories.push({title: 'New Story', description: 'Description pending.'});
 	};
 
-	// Build indexes based on a property for quick lookup
-	var buildIndex = function(source, property){
-		var tempArray = [];
 
-		for(var i=0, len=source.length; i<len; i++){
-			tempArray[source[i][property]]=source[i];
-		}
-
-		return tempArray;
-	};
-
-	$scope.typesIndex = buildIndex($scope.types, 'name');
-	$scope.statusesIndex = buildIndex($scope.statuses, 'name');	
+	$scope.typesIndex = angelloHelper.buildIndex($scope.types, 'name');
+	$scope.statusesIndex = angelloHelper.buildIndex($scope.statuses, 'name');	
 
 	// Setting current Story
 	$scope.currentStory;
@@ -91,4 +81,21 @@ myModule.controller('MainCtrl', function($scope) {
 		}
 	};
 
+});								// Controller
+
+myModule.factory('angelloHelper', function(){
+	// Build indexes based on a property for quick lookup
+	var buildIndex = function(source, property){
+		var tempArray = [];
+
+		for(var i=0, len=source.length; i<len; i++){
+			tempArray[source[i][property]]=source[i];
+		}
+
+		return tempArray;
+	};
+
+	return {
+		buildIndex: buildIndex
+	};
 });
