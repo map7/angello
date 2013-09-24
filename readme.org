@@ -3,3 +3,4 @@
 AngularJS in Action example application
 
 http://www.manning.com/bford/
+https://github.com/angularjs-in-action
