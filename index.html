@@ -1,0 +1,17 @@
+<html ng-app="Angello">
+  <head>
+	<title>Angello - AngularJS in Action Example</title>
+	<script type="text/javascript" src="app/bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="app/app.js"></script>
+	
+  </head>
+  <body>
+	<div ng-controller="MainCtrl">
+	  <h2>Stories</h2>
+	  <div class="story" ng-repeat="story in stories">
+		<h4>{{story.title}}</h4>
+		<p>{{story.description}}</p>
+	  </div>
+	</div> 
+  </body>
+</html>
