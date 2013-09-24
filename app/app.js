@@ -34,6 +34,23 @@ myModule.controller('MainCtrl', function($scope) {
 		}
 	];
 
+	$scope.statuses = [
+		{name: 'Back Log'},
+		{name: 'To Do'},
+		{name: 'In Progress'},
+		{name: 'Code Review'},
+		{name: 'QA Review'},
+		{name: 'Verified'},
+		{name: 'Done'}
+	];
+		
+	$scope.types = [
+		{name:'Feature'},
+		{name:'Enhancement'},
+		{name:'Bug'},
+		{name:'Spike'}
+	];
+
 	// Setting current Story
 	$scope.currentStory;
 

@@ -47,6 +47,23 @@
 			<div class="controls">
 			  <textarea id="inputAssignee" rows="3" ng-model="currentStory.assignee"></textarea>
 			</div>
+		  </div>
+		  <div class="control-group">
+			<label class="control-label" for="inputStatus">Status</label>
+			<div class="controls">
+			  <select id="inputStatus"
+					  ng-model="currentStatus"
+					  ng-options="s.name for s in statuses">
+			  </select>
+			</div>
+		  </div>
+		  <div class="control-group">
+			<label class="control-label" for="inputType">Type</label>
+			<div class="controls">
+			  <select id="inputType"
+					  ng-model="currentType"
+					  ng-options="s.name for s in types">
+			</div>
 		  </div> <!-- control-group -->
 		</form>
 		<br />
