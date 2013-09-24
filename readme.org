@@ -1,3 +1,5 @@
 * Angello
 
 AngularJS in Action example application
+
+http://www.manning.com/bford/
