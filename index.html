@@ -27,12 +27,27 @@
 		  <div class="control-group">
 			<label class="control-label" for="inputDescription">Description</label>
 			<div class="controls">
-			  <textarea id="inputDescription"
-						rows="3"
-						ng-model="currentStory.description">
-			  </textarea>
+			  <textarea id="inputDescription" rows="3" ng-model="currentStory.description"></textarea>
 			</div>
 		  </div>
+		  <div class="control-group">
+			<label class="control-label" for="inputAcceptance">Acceptance Criteria</label>
+			<div class="controls">
+			  <textarea id="inputAcceptance" rows="3" ng-model="currentStory.criteria"></textarea>
+			</div>
+		  </div>
+		  <div class="control-group">
+			<label class="control-label" for="inputReporter">Reporter</label>
+			<div class="controls">
+			  <textarea id="inputReporter" rows="3" ng-model="currentStory.reporter"></textarea>
+			</div>
+		  </div>
+		  <div class="control-group">
+			<label class="control-label" for="inputAssignee">Assignee</label>
+			<div class="controls">
+			  <textarea id="inputAssignee" rows="3" ng-model="currentStory.assignee"></textarea>
+			</div>
+		  </div> <!-- control-group -->
 		</form>
 		<br />
 		<a class="btn" ng-click="createStory()">
