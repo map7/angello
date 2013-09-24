@@ -1,4 +1,5 @@
-.menu {float: left;}
+.columns {float: left;}
+
 .story {
 	background: lightgrey;
 	border: solid 1px grey;
@@ -7,7 +8,6 @@
 .story > h4, .story > p {margin: 10;}
 
 .body-content {
-	float: left;
 	padding-left: 20px;
 }
 
