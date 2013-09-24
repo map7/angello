@@ -59,6 +59,7 @@
 			  </select>
 			</div>
 		  </div>
+
 		  <div class="control-group">
 			<label class="control-label" for="inputType">Type</label>
 			<div class="controls">
@@ -66,9 +67,20 @@
 					  ng-model="currentType"
 					  ng-options="s.name for s in types"
 					  ng-change="setCurrentType(currentType)">
+			  </select>
 			</div>
 		  </div> <!-- control-group -->
 		</form>
+		<div class="small-12 large-2 columns"
+			 ng-repeat="status in statuses">
+		  <h3>{{status.name}}</h3>
+		  <article
+			 ng-repeat="story in stories | filter:{status:status.name}"
+			 ng-click="setCurrentStory(story)">
+			 <h4>{{story.title}}</h4>
+			 <p>{{story.description}}</p>
+		  </article>
+		</div>
 	  </div>
 	</div> <!-- controller -->
   </body>
