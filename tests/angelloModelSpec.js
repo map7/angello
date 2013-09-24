@@ -19,7 +19,22 @@ describe("Service: angelloModel", function(){
 				   map(function(status) {// get just the name of each status
 						   return status.name;
 				   })).
-				   toContain("To Do");
+				toContain("To Do");
+		});
+	});
+
+	describe("#getTypes", function(){
+		it('should return four different types', function(){
+			expect(modelService.getTypes().length).toBe(4);
+		});
+
+		it('should have a type named "Bug"', function(){
+			expect(modelService.
+				   getTypes().
+				   map(function(type) {
+					   return type.name;
+				   })).
+				toContain("Bug");
 		});
 	});
 
