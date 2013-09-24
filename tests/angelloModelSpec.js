@@ -38,4 +38,16 @@ describe("Service: angelloModel", function(){
 		});
 	});
 
+	describe("#getStories", function(){
+		it('should return six different stories', function(){
+			expect(modelService.getStories().length).toBe(6);
+		});
+
+		it('should return stories which have a description property', function(){
+			modelService.getStories().forEach(function(story) {
+				expect(story.description).toBeDefined();
+			});
+		});
+	});
+
 });
