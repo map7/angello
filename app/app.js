@@ -11,11 +11,15 @@ myModule.controller('MainCtrl', function($scope) {
 		{title: 'Story 05', description: 'Description pending.'}
 	];
 
+	// Setting current Story
 	$scope.currentStory;
 
 	$scope.setCurrentStory = function(story) {
 		$scope.currentStory = story;
 	};
 
-	
+	// Create a new story
+	$scope.createStory = function() {
+		$scope.stories.push({title: 'New Story', description: 'Description pending.'});
+	};
 });
